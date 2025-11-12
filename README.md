@@ -1,1 +1,24 @@
-🧇 README: The Waffle Wishlist ProjectThis project, The Waffle Wishlist, is a two-page static website built using HTML, CSS, and vanilla JavaScript. It serves as a proof of concept demonstrating proficiency in core front-end development, fulfilling all requirements of the build challenge.📝 Project OverviewThe site is themed around a fictional waffle shop, providing a visually appealing menu and an interactive order form.Page NameFocusKey JavaScript Functionsindex.html (The Waffle Menu)Information Display & StylingToggle secret tip, change header color on click, update image description on click.order.html (The Waffle Order Form)User Interaction & LogicDynamic cost calculation, form validation (using an if statement), style change upon topping selection.✨ Features and Requirements MetTwo Pages: Complete index.html and order.html with real content.Static Build: Only HTML, CSS, and vanilla JavaScript are used (no frameworks).HTML/CSS Features (5+ per page): Includes Flexbox, CSS Grid, custom fonts, pseudo-classes (:hover), gradients, semantic HTML, and media queries.JavaScript Functions (3 per page):Change Something: Elements are hidden, shown, or their styles are updated.React to User: Functions execute on button clicks, form input changes, and image clicks.Core JS: Demonstrated use of Event Listeners, If Statements, DOM updates, and variable manipulation.🚀 How to RunClone or download this project repository.Open the index.html file in your web browser.Navigate to the "Order Form" page via the link on the menu page.📌 Next StepsTo check out the code, look in the <script> tags (or linked .js files) for the six clearly named functions.Try interacting with the elements (clicking the images, changing quantities, clicking buttons) to see the JavaScript in action.
+🧇 README: The Waffle Wishlist Project
+!
+
+The "Waffle Wishlist" is a two-page static web application built as a front-end skills demonstration. The project is focused on showing competency in manipulating the DOM, handling user input, and applying core JavaScript logic alongside modern CSS layout techniques.
+
+✨ Features
+Dual Page Structure: Dedicated pages for the Waffle Menu and the Order Form.
+
+Dynamic Styling: Elements change size, color, and visibility based on user interaction.
+
+Form Validation: The order form uses an if statement to prevent submission if the order quantity is invalid.
+
+Live Cost Calculation: The estimated total updates instantly as the user modifies order quantities.
+
+Interactive Menu: Clickable images and buttons that trigger visual changes on the menu page.
+
+Responsive Design: Uses Media Queries to ensure basic usability on smaller screens.
+
+🛠️ Built With
+HTML5 (Semantic Structure)
+
+CSS3 (Flexbox, CSS Grid, Gradients, Custom Fonts)
+
+Vanilla JavaScript (DOM Manipulation, Event Listeners, If Statements)
