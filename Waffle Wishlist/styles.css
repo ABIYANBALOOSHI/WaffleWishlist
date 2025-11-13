@@ -1,17 +1,15 @@
 /* ----------------------------------------------------------------
-   1. VARIABLES AND RESET
+   1. VARIABLES, RESET, AND BODY STYLES
 ---------------------------------------------------------------- */
 
 :root {
-  /* Colors */
+  /* Colors from your Hack Club design */
   --bg-color: #fcf6ec; /* Very light cream/beige background */
-  --primary-color: #935327; /* Dark reddish-brown for headings and primary buttons */
-  --accent-color: #d0a175; /* Lighter, more orange-toned brown for borders and highlights */
-  --text-color: #4a4a4a; /* General body text color (optional) */
-
-  /* Fonts */
-  --font-family-body: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-family-heading: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --primary-color: #935327; /* Dark reddish-brown for headings and buttons */
+  --accent-color: #d0a175; /* Lighter brown for borders/accents */
+  --text-color: #4a4a4a; /* General body text color */
+  --link-color: #007bff; /* Standard blue for links */
+  --button-hover: #7c4521;
 }
 
 /* Basic Reset */
@@ -23,148 +21,174 @@
 
 body {
   background-color: var(--bg-color);
-  font-family: var(--font-family-body);
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--text-color);
-  min-height: 100vh;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Centering the entire content area */
+.container {
+  max-width: 700px;
+  margin: 0 auto; /* This centers the container */
+  padding: 30px;
+  background-color: white; /* Optional: Make the content area stand out */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* ----------------------------------------------------------------
-   2. HEADER AND NAVIGATION STYLES
+   2. HEADER AND INTRODUCTION
 ---------------------------------------------------------------- */
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 50px; /* Adjust padding as needed */
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* Logo (assuming a div/img for the logo) */
-.logo img {
-    /* Set a reasonable height for the logo image */
-    height: 70px;
-    /* Optional: If the logo text is separate, style it here */
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 10px;
-}
-
-nav ul li a {
-  text-decoration: none;
+h1 {
+  font-size: 2.5rem;
   color: var(--primary-color);
-  padding: 8px 15px;
-  border: 2px solid var(--accent-color);
-  border-radius: 5px;
-  font-weight: 500;
-  transition: background-color 0.2s, color 0.2s;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: 700;
 }
 
-nav ul li a:hover {
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  margin-bottom: 25px;
+}
+
+/* ----------------------------------------------------------------
+   3. BUTTONS
+---------------------------------------------------------------- */
+
+/* Style for the "Change Header Color" button */
+#colorButton {
   background-color: var(--accent-color);
   color: white;
-}
-
-/* ----------------------------------------------------------------
-   3. HERO / MAIN CONTENT STYLES
----------------------------------------------------------------- */
-
-.hero-section {
-  text-align: center;
-  /* Center the content vertically within the remaining space */
-  padding-top: 100px; 
-}
-
-/* Main Heading: "Build, ship, eat (waffles)." */
-.main-title {
-  font-family: var(--font-family-heading);
-  color: var(--primary-color);
-  font-size: clamp(3rem, 10vw, 5.5rem); /* Responsive sizing */
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
-
-/* Subtitle: "The next step in your webdev journey." */
-.subtitle {
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  color: var(--primary-color);
-  margin-bottom: 40px;
-}
-
-/* Highlighted Text: "webdev journey." */
-.subtitle .highlight {
-  color: inherit; /* Use the same color as the subtitle */
-  text-decoration: none; /* Remove default link underline */
-  padding-bottom: 2px;
-  border-bottom: 2px solid var(--accent-color); /* The visual underline */
-  font-weight: 600;
-}
-
-/* ----------------------------------------------------------------
-   4. BUTTON STYLES
----------------------------------------------------------------- */
-
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 100px;
-}
-
-.btn {
-  /* General button styles */
-  padding: 12px 25px;
+  border: none;
+  padding: 8px 15px;
   border-radius: 5px;
-  font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.1s, opacity 0.1s;
-  display: flex;
-  align-items: center;
-  text-decoration: none; /* In case you use <a> tags instead of <button> */
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: background-color 0.2s;
+  display: block; /* Makes it take up full width for centering */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.btn i.icon {
-    margin-right: 8px;
-    font-size: 1.1rem;
+#colorButton:hover {
+  background-color: var(--primary-color);
 }
 
-/* Primary Button: "Submit Your Site" (Solid background) */
-.primary-btn {
+/* Style for the "Show/Hide Tip" button */
+#tipButton {
   background-color: var(--primary-color);
   color: white;
-  border: 2px solid var(--primary-color);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: background-color 0.2s;
 }
 
-.primary-btn:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+#tipButton:hover {
+  background-color: var(--button-hover);
 }
 
-/* Secondary Button: "View Requirements" (Outline/Ghost button) */
-.secondary-btn {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--accent-color);
+/* ----------------------------------------------------------------
+   4. MENU ITEMS AND LISTS
+---------------------------------------------------------------- */
+
+ul {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin-top: 20px;
 }
 
-.secondary-btn:hover {
-  background-color: rgba(208, 161, 117, 0.1); /* Light hover effect */
-  transform: translateY(-1px);
+li {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  display: flex; /* For possible future layout */
+  align-items: center;
 }
 
-/* "Other ways to participate" text at the bottom */
-.other-ways {
-    margin-top: 50px;
-    font-size: 0.95rem;
+/* Style for the Waffle image */
+.waffleImage {
+    margin-right: 15px;
+    height: 40px; /* Adjust size */
+    width: auto;
+    /* Optional: subtle border around the image */
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    border-radius: 4px;
+}
+
+/* Style for the waffle name (e.g., Classic Belgian Waffle) */
+.waffleName {
+    font-size: 1.3rem;
+    font-weight: 700;
     color: var(--primary-color);
-    padding-bottom: 30px;
+    display: block; /* Ensure it takes its own line */
+}
+
+/* Style for the description (e.g., A perfect, fluffy square...) */
+.waffleDescription {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-top: 5px;
+}
+
+/* ----------------------------------------------------------------
+   5. ORDER LINK AND FOOTER
+---------------------------------------------------------------- */
+
+#orderLink {
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 1.1rem;
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid var(--link-color);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+#orderLink:hover {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* "Secret Waffle Tip!" Heading */
+h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border-top: 1px solid var(--accent-color);
+    padding-top: 20px;
+}
+
+/* Waffle tip text */
+#tipText {
+    font-style: italic;
+    color: var(--text-color);
+    padding: 10px;
+    background-color: #fff8e8; /* Lighter background for the tip */
+    border-left: 5px solid var(--accent-color);
+    margin-bottom: 30px;
+}
+
+/* Footer copyright information */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--bg-color);
 }
