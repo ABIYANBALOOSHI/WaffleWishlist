@@ -1,429 +1,170 @@
-/* ===== RESET & BASE STYLES ===== */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ----------------------------------------------------------------
+   1. VARIABLES AND RESET
+---------------------------------------------------------------- */
+
+:root {
+  /* Colors */
+  --bg-color: #fcf6ec; /* Very light cream/beige background */
+  --primary-color: #935327; /* Dark reddish-brown for headings and primary buttons */
+  --accent-color: #d0a175; /* Lighter, more orange-toned brown for borders and highlights */
+  --text-color: #4a4a4a; /* General body text color (optional) */
+
+  /* Fonts */
+  --font-family-body: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-heading: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
-    background-color: #FFF8F0;
-    color: #2D1B1B;
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.6;
+  background-color: var(--bg-color);
+  font-family: var(--font-family-body);
+  color: var(--text-color);
+  min-height: 100vh;
 }
 
-h1, h2, h3 {
-    font-family: 'Permanent Marker', cursive;
-    color: #4A2C2A;
+/* ----------------------------------------------------------------
+   2. HEADER AND NAVIGATION STYLES
+---------------------------------------------------------------- */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px; /* Adjust padding as needed */
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-h1 {
-    font-size: 2.2rem;
-    text-align: center;
-    margin: 1rem 0;
+/* Logo (assuming a div/img for the logo) */
+.logo img {
+    /* Set a reasonable height for the logo image */
+    height: 70px;
+    /* Optional: If the logo text is separate, style it here */
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
-h2 {
-    font-size: 1.6rem;
-    margin: 1.5rem 0 1rem;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
 }
 
-p, label, input, button {
-    font-size: 1rem;
+nav ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  padding: 8px 15px;
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-/* ===== HEADER STYLES ===== */
-#main-header,
-#order-header {
-    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-    position: relative;
-    overflow: hidden;
+nav ul li a:hover {
+  background-color: var(--accent-color);
+  color: white;
 }
 
-#main-header::after,
-#order-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background: repeating-linear-gradient(
-        45deg,
-        #4A2C2A,
-        #4A2C2A 10px,
-        transparent 10px,
-        transparent 20px
-    );
+/* ----------------------------------------------------------------
+   3. HERO / MAIN CONTENT STYLES
+---------------------------------------------------------------- */
+
+.hero-section {
+  text-align: center;
+  /* Center the content vertically within the remaining space */
+  padding-top: 100px; 
 }
 
-#main-header p {
+/* Main Heading: "Build, ship, eat (waffles)." */
+.main-title {
+  font-family: var(--font-family-heading);
+  color: var(--primary-color);
+  font-size: clamp(3rem, 10vw, 5.5rem); /* Responsive sizing */
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+/* Subtitle: "The next step in your webdev journey." */
+.subtitle {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: var(--primary-color);
+  margin-bottom: 40px;
+}
+
+/* Highlighted Text: "webdev journey." */
+.subtitle .highlight {
+  color: inherit; /* Use the same color as the subtitle */
+  text-decoration: none; /* Remove default link underline */
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--accent-color); /* The visual underline */
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------------------
+   4. BUTTON STYLES
+---------------------------------------------------------------- */
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 100px;
+}
+
+.btn {
+  /* General button styles */
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.1s;
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* In case you use <a> tags instead of <button> */
+}
+
+.btn i.icon {
+    margin-right: 8px;
     font-size: 1.1rem;
-    margin: 0.5rem 0 1rem;
-    opacity: 0.95;
 }
 
-#color-btn {
-    background: #4A2C2A;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
+/* Primary Button: "Submit Your Site" (Solid background) */
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: 2px solid var(--primary-color);
 }
 
-#color-btn:hover {
-    background: #6A994E;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.primary-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
-/* ===== MAIN CONTENT ===== */
-.menu-container,
-.order-main {
-    flex: 1;
-    padding: 2rem 1rem;
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
+/* Secondary Button: "View Requirements" (Outline/Ghost button) */
+.secondary-btn {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--accent-color);
 }
 
-/* ===== MENU LIST (index.html) ===== */
-.menu-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0;
+.secondary-btn:hover {
+  background-color: rgba(208, 161, 117, 0.1); /* Light hover effect */
+  transform: translateY(-1px);
 }
 
-@media (min-width: 600px) {
-    .menu-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.menu-item {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.menu-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(255, 107, 53, 0.2);
-}
-
-.waffle-item {
-    margin: 0;
-    cursor: pointer;
-}
-
-.waffle-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.waffle-image:hover {
-    transform: scale(1.05);
-}
-
-.waffle-item figcaption {
-    background: #4A2C2A;
-    color: white;
-    padding: 0.8rem;
-    text-align: center;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1.3rem;
-}
-
-.waffle-description {
-    padding: 1rem;
-    background: #FFF8F0;
-    font-style: italic;
-    color: #4A2C2A;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* ===== ACTION PANEL ===== */
-.action-panel {
-    text-align: center;
-    padding: 2rem 1rem;
-    background: #f9e4d4;
-}
-
-.order-link {
-    display: inline-block;
-    background: #FF6B35;
-    color: white;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
-    transition: all 0.3s ease;
-}
-
-.order-link:hover {
-    background: #F7931E;
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(247, 147, 30, 0.5);
-}
-
-/* ===== SECRET TIP SECTION ===== */
-.secret-tip {
-    background: #4A2C2A;
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-}
-
-.secret-tip h2 {
-    color: #FF6B35;
-    margin-bottom: 1rem;
-}
-
-.secret-tip button {
-    background: #FF6B35;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    margin: 1rem 0;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.secret-tip button:hover {
-    background: #F7931E;
-    transform: rotate(5deg);
-}
-
-#tip-text {
-    max-width: 600px;
-    margin: 1rem auto;
-    font-style: italic;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: 12px;
-}
-
-/* ===== ORDER FORM (order.html) ===== */
-.banner-figure {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.form-banner {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.banner-figure figcaption {
-    margin-top: 0.5rem;
-    font-style: italic;
-    color: #666;
+/* "Other ways to participate" text at the bottom */
+.other-ways {
+    margin-top: 50px;
     font-size: 0.95rem;
-}
-
-#waffle-form {
-    background: white;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #4A2C2A;
-}
-
-.form-group input[type="text"],
-.form-group input[type="number"] {
-    width: 100%;
-    padding: 0.8rem;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border 0.3s ease;
-}
-
-.form-group input:focus {
-    outline: none;
-    border-color: #FF6B35;
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
-}
-
-/* Custom Checkboxes */
-.checkbox-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.checkbox-group > div {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.checkbox-group input[type="checkbox"] {
-    appearance: none;
-    width: 22px;
-    height: 22px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.2s ease;
-}
-
-.checkbox-group input[type="checkbox"]:checked {
-    background: #FF6B35;
-    border-color: #FF6B35;
-}
-
-.checkbox-group input[type="checkbox"]:checked::after {
-    content: '✓';
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.checkbox-group label {
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.checkbox-group input[type="checkbox"]:checked + label {
-    color: #FF6B35;
-    font-weight: 600;
-}
-
-/* Summary */
-.summary {
-    background: #f9e4d4;
-    padding: 1rem;
-    border-radius: 12px;
-    margin: 1.5rem 0;
-    text-align: center;
-    font-weight: bold;
-    color: #4A2C2A;
-}
-
-.summary p {
-    margin: 0.5rem 0;
-}
-
-/* Error Message */
-.error-text {
-    color: #D32F2F;
-    font-size: 0.9rem;
-    text-align: center;
-    margin: 1rem 0;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Submit Button */
-.submit-btn {
-    display: block;
-    width: 100%;
-    background: #FF6B35;
-    color: white;
-    border: none;
-    padding: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
-}
-
-.submit-btn:hover {
-    background: #F7931E;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(247, 147, 30, 0.5);
-}
-
-.submit-btn:active {
-    transform: translateY(0);
-}
-
-/* ===== FOOTER ===== */
-footer {
-    background: #4A2C2A;
-    color: #f9e4d4;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: auto;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: #FF6B35;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    color: #F7931E;
-    text-decoration: underline;
-}
-
-.social-links p {
-    margin: 0.3rem 0;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 480px) {
-    h1 { font-size: 1.8rem; }
-    .menu-list { gap: 1.5rem; }
-    #waffle-form { padding: 1.5rem; }
-    .submit-btn, .order-link { font-size: 1rem; padding: 0.9rem; }
+    color: var(--primary-color);
+    padding-bottom: 30px;
 }
