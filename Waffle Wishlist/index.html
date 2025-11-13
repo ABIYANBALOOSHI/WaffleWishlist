@@ -3,55 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Waffle Wishlist Menu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Waffle Wishlist | Build, Ship, Eat</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700;9..40,900&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <header id="main-header">
-        <h1>🧇 The Waffle Wishlist Menu 🧇</h1>
-        <p>Your daily dose of doughy deliciousness.</p>
-        <button id="color-btn">Change Header Color</button>
+    <header>
+        <div class="logo">
+            <img src="images/hack_club_logo.png" alt="Hack Club Logo" height="70">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="requirements.html">Requirements</a></li> <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="menu-container">
-        <ul class="menu-list">
-            <li class="menu-item">
-    <figure class="waffle-item">
-        <img src="placeholder_classic.jpg" alt="Classic Belgian Waffle" class="waffle-image" onclick="updateImageText('classic-desc')">
-        <figcaption>Classic Belgian Waffle</figcaption>
-    </figure>
-    <p id="classic-desc" class="waffle-description">A perfect, fluffy square with deep pockets.</p>
-</li>
-<li class="menu-item">
-    <figure class="waffle-item">
-        <img src="placeholder_chocolate.jpg" alt="Chocolate Chip Waffle" class="waffle-image" onclick="updateImageText('choc-desc')">
-    <figcaption>Chocolate Chip Delight</figcaption>
-    </figure>
-    <p id="choc-desc" class="waffle-description">Loaded with rich, melty chips.</p>
-</li>
-        </ul>
-    </main>
+    <main class="hero-section">
+        
+        <h1 class="main-title">Build, ship, eat (waffles).</h1>
 
-    <section class="action-panel">
-        <a href="order.html" class="order-link">Place Your Order!</a>
-    </section>
+        <p class="subtitle">
+            The next step in your 
+            <span class="highlight">webdev journey</span>.
+        </p>
 
-    <section class="secret-tip">
-        <h2>Secret Waffle Tip!</h2>
-        <button onclick="toggleWaffleTip()">Show/Hide Tip</button>
-        <p id="tip-text" class="hidden">For extra crispiness, toast your day-old waffles!</p>
-    </section>
-
-    <footer>
-        <div class="social-links">
-            <p>&copy; 2025 Waffle Wishlist</p>
-            <p>Made with love and syrup.</p>
+        <div class="cta-buttons">
+            <a href="submission.html" class="btn primary-btn">
+                <i class="icon fas fa-rocket"></i> 
+                Submit Your Site
+            </a>
+            
+            <a href="menu.html" class="btn secondary-btn">
+                <i class="icon fas fa-list-ul"></i> 
+                View Requirements
+            </a>
         </div>
-    </footer>
+        
+        <p class="other-ways">
+            Other ways to participate
+        </p>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
-
 </html>
