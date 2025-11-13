@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Waffle Wishlist Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <h1>🧇 The Waffle Wishlist Menu 🧇</h1>
+        <p>Your daily dose of doughy deliciousness.</p>
+        <button id="color-btn">Change Header Color</button>
+    </header>
+
+    <main class="menu-container">
+        <ul class="menu-list">
+            <li class="menu-item">
+    <figure class="waffle-item">
+        <img src="placeholder_classic.jpg" alt="Classic Belgian Waffle" class="waffle-image" onclick="updateImageText('classic-desc')">
+        <figcaption>Classic Belgian Waffle</figcaption>
+    </figure>
+    <p id="classic-desc" class="waffle-description">A perfect, fluffy square with deep pockets.</p>
+</li>
+<li class="menu-item">
+    <figure class="waffle-item">
+        <img src="placeholder_chocolate.jpg" alt="Chocolate Chip Waffle" class="waffle-image" onclick="updateImageText('choc-desc')">
+    <figcaption>Chocolate Chip Delight</figcaption>
+    </figure>
+    <p id="choc-desc" class="waffle-description">Loaded with rich, melty chips.</p>
+</li>
+        </ul>
+    </main>
+
+    <section class="action-panel">
+        <a href="order.html" class="order-link">Place Your Order!</a>
+    </section>
+
+    <section class="secret-tip">
+        <h2>Secret Waffle Tip!</h2>
+        <button onclick="toggleWaffleTip()">Show/Hide Tip</button>
+        <p id="tip-text" class="hidden">For extra crispiness, toast your day-old waffles!</p>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <p>&copy; 2025 Waffle Wishlist</p>
+            <p>Made with love and syrup.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
